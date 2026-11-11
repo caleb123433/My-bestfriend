@@ -1,0 +1,558 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Favour | A Special Surprise</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #080808;
+    color: #f5e4b4;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+button {
+    border: none;
+    padding: 14px 24px;
+    border-radius: 30px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 8px;
+    transition: .3s;
+}
+
+button:hover {
+    transform: scale(1.06);
+}
+
+.gold {
+    color: #e7bd65;
+}
+
+#welcome {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    background: radial-gradient(circle, #30230b, #050505 75%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 25px;
+    transition: opacity 1s, visibility 1s;
+}
+
+#welcome h1 {
+    color: #e9c46a;
+    font-size: 39px;
+    margin: 20px 0;
+    animation: appear 2s;
+}
+
+#welcome p {
+    line-height: 1.8;
+    color: #f6e6c2;
+}
+
+.hide {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.open-btn {
+    background: linear-gradient(45deg,#a87824,#ffe5a0);
+    color: #171006;
+    margin-top: 30px;
+}
+
+.container {
+    width: 92%;
+    max-width: 680px;
+    margin: 30px auto;
+    padding: 28px 20px;
+    text-align: center;
+    background: linear-gradient(145deg,#171717,#0b0b0b);
+    border: 1px solid #b58a3a;
+    border-radius: 22px;
+    box-shadow: 0 0 30px rgba(205,160,66,.15);
+}
+
+h1 {
+    font-size: 33px;
+    margin: 20px 0;
+    color: #e9c46a;
+}
+
+h2 {
+    color: #e9c46a;
+    margin: 22px 0 14px;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.9;
+    margin: 13px 0;
+    color: #f4e9d2;
+}
+
+.crown {
+    font-size: 55px;
+}
+
+.heart {
+    font-size: 60px;
+    animation: beat 1.2s infinite;
+}
+
+@keyframes beat {
+    50% { transform: scale(1.2); }
+}
+
+@keyframes appear {
+    from {opacity:0; transform:translateY(25px);}
+    to {opacity:1; transform:translateY(0);}
+}
+
+.section {
+    background: rgba(218,177,93,.07);
+    border: 1px solid rgba(218,177,93,.35);
+    padding: 22px;
+    border-radius: 17px;
+    margin: 25px 0;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin: 25px 0;
+}
+
+.photo {
+    width: 44%;
+    min-width: 130px;
+}
+
+.photo img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    border: 2px solid #d8ad55;
+    border-radius: 16px;
+}
+
+.photo p {
+    color: #e9c46a;
+    font-weight: bold;
+}
+
+.gold-btn {
+    background: linear-gradient(45deg,#a87928,#ffe3a0);
+    color: #15100a;
+}
+
+.white-btn {
+    background: #f4ead7;
+    color: #18120a;
+}
+
+.music button {
+    background: linear-gradient(45deg,#a87928,#ffe3a0);
+    color: #171006;
+}
+
+.letter {
+    display: none;
+    background: #211b10;
+    border: 1px dashed #e9c46a;
+    border-radius: 15px;
+    padding: 22px;
+    margin-top: 18px;
+    animation: appear 1s;
+}
+
+#response {
+    display: none;
+    background: #211b10;
+    border: 1px solid #d9b45c;
+    border-radius: 18px;
+    padding: 22px;
+    margin-top: 20px;
+    animation: appear .8s;
+}
+
+.whatsapp {
+    display: inline-block;
+    padding: 14px 22px;
+    border-radius: 30px;
+    background: #20c66b;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.footer {
+    margin-top: 30px;
+    color: #d6b66e;
+    font-size: 13px;
+}
+
+.floating {
+    position: fixed;
+    bottom: -30px;
+    animation: floatUp 8s linear forwards;
+    pointer-events: none;
+    z-index: 5;
+}
+
+@keyframes floatUp {
+    to {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- OPENING SCREEN -->
+
+<div id="welcome">
+    <div class="crown">👑</div>
+    <h1>WELCOME, FAVOUR</h1>
+    <p>
+        A special surprise has been prepared
+        for someone truly appreciated.
+    </p>
+    <button class="open-btn" onclick="openWebsite()">
+        ENTER YOUR SURPRISE ✨
+    </button>
+</div>
+
+
+<div class="container">
+
+    <div class="crown">👑</div>
+
+    <h1>Dear Favour ❤️</h1>
+
+    <p>
+        Welcome to your exclusive little corner.
+        Today, this website is all about YOU.
+    </p>
+
+    <div class="heart">🖤</div>
+
+    
+    <!-- MUSIC -->
+
+    <div class="section music">
+
+        <h2>🎵 A LITTLE VIBE FOR YOU</h2>
+
+        <p>
+            Sit back, relax and enjoy the music.
+        </p>
+
+        <audio id="song" loop>
+            <source src="afrobeats.mp3" type="audio/mpeg">
+        </audio>
+
+        <button onclick="toggleMusic()" id="musicBtn">
+            ▶ PLAY AFROBEATS
+        </button>
+
+    </div>
+
+    <!-- APPRECIATION -->
+
+    <div class="section">
+
+        <h2>✨ YOU ARE SPECIAL ✨</h2>
+
+        <p>
+            Favour, I want you to know that
+            you are genuinely appreciated.
+        </p>
+
+        <p>
+            Sometimes, meeting good people makes
+            ordinary days more interesting.
+            I appreciate the person you are.
+        </p>
+
+        <p>
+            I hope we get to share beautiful memories,
+            laugh over random things, encourage each other
+            and make life a little more enjoyable.
+        </p>
+
+        <p>
+            You deserve genuine friendship,
+            respect and happiness.
+        </p>
+
+        <h2>THANK YOU FOR BEING YOU! 🖤</h2>
+
+    </div>
+
+    <!-- SECRET LETTER -->
+
+    <h2>💌 A PRIVATE MESSAGE FOR YOU</h2>
+
+    <p>There's something I want you to read.</p>
+
+    <button class="gold-btn" onclick="openLetter()">
+        UNLOCK YOUR LETTER 🔐
+    </button>
+
+    <div class="letter" id="letter">
+
+        <h2>Dear Favour, ❤️</h2>
+
+        <p>
+            I created this little website because
+            I wanted to do something different
+            and make you feel appreciated.
+        </p>
+
+        <p>
+            I don't know what the future holds,
+            but I would love to build a friendship
+            with you based on trust, respect,
+            honesty and happiness.
+        </p>
+
+        <p>
+            I want us to be able to talk about
+            random things, share jokes, support
+            each other and create memories
+            worth remembering.
+        </p>
+
+        <p>
+            No pressure, no fake promises,
+            just genuine friendship.
+        </p>
+
+        <h2>YOU ARE APPRECIATED, FAVOUR! 🖤</h2>
+
+        <p>From someone who would love to be your Bestfriend.</p>
+
+    </div>
+
+    <!-- THE BIG QUESTION -->
+
+    <div class="section">
+
+        <h2>🥹 THE BIG QUESTION</h2>
+
+        <h1>
+            FAVOUR, WILL YOU BE MY BESTFRIEND?
+        </h1>
+
+        <p>
+            Are you ready for random conversations,
+            unlimited laughter, genuine support
+            and beautiful memories?
+        </p>
+
+        <button class="gold-btn" onclick="answerYes()">
+            YES, ABSOLUTELY! ❤️
+        </button>
+
+        <button class="white-btn" onclick="answerThink()">
+            LET ME THINK 😊
+        </button>
+
+    </div>
+
+    <!-- ANSWER -->
+
+    <div id="response">
+
+        <h2 id="responseTitle"></h2>
+
+        <p id="responseText"></p>
+
+        <a id="whatsapp" class="whatsapp"
+           href="#" target="_blank"
+           rel="noopener"
+           style="display:none;">
+            SEND MY ANSWER TO WHATSAPP 💬
+        </a>
+
+    </div>
+
+    <div class="footer">
+        <p>MADE WITH ❤️ SPECIALLY FOR FAVOUR</p>
+        <p>BLACK & GOLD EDITION 👑</p>
+    </div>
+
+</div>
+
+
+<script>
+
+// YOUR WHATSAPP NUMBER
+const myWhatsApp = "2348129372431";
+
+let selectedAnswer = "";
+
+// OPENING ANIMATION
+
+function openWebsite() {
+    document.getElementById("welcome")
+        .classList.add("hide");
+
+    createHearts();
+}
+
+// MUSIC
+
+function toggleMusic() {
+
+    const song = document.getElementById("song");
+    const btn = document.getElementById("musicBtn");
+
+    if (song.paused) {
+
+        song.play().then(() => {
+            btn.innerHTML = "⏸ PAUSE MUSIC";
+        }).catch(() => {
+            alert("Please add your afrobeats.mp3 file.");
+        });
+
+    } else {
+
+        song.pause();
+        btn.innerHTML = "▶ PLAY AFROBEATS";
+
+    }
+
+}
+
+// SECRET LETTER
+
+function openLetter() {
+
+    const letter = document.getElementById("letter");
+
+    letter.style.display =
+        letter.style.display === "block" ? "none" : "block";
+
+}
+
+// YES
+
+function answerYes() {
+
+    selectedAnswer = "YES! I WILL BE YOUR BESTFRIEND ❤️";
+
+    document.getElementById("responseTitle").innerHTML =
+        "SHE SAID YES!!! 👑❤️🎉";
+
+    document.getElementById("responseText").innerHTML =
+        "Welcome to our beautiful friendship journey, Favour! Here's to trust, laughter, support and unforgettable memories.";
+
+    showResponse();
+    createHearts();
+
+}
+
+// THINK
+
+function answerThink() {
+
+    selectedAnswer = "I NEED TO THINK 😊";
+
+    document.getElementById("responseTitle").innerHTML =
+        "NO PRESSURE, FAVOUR! 🖤";
+
+    document.getElementById("responseText").innerHTML =
+        "Take all the time you need. Your choice is respected. I just wanted you to know that you are appreciated.";
+
+    showResponse();
+
+}
+
+// WHATSAPP
+
+function showResponse() {
+
+    document.getElementById("response").style.display = "block";
+
+    const message =
+        "Hello! I visited your friendship website. My answer is: "
+        + selectedAnswer;
+
+    const link = document.getElementById("whatsapp");
+
+    link.href = "https://wa.me/" + myWhatsApp +
+        "?text=" + encodeURIComponent(message);
+
+    link.style.display = "inline-block";
+
+}
+
+// FLOATING HEARTS
+
+function createHearts() {
+
+    for (let i = 0; i < 35; i++) {
+
+        const heart = document.createElement("div");
+
+        heart.innerHTML = ["🖤","✨","💛","❤️"][
+            Math.floor(Math.random() * 4)
+        ];
+
+        heart.className = "floating";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.animationDelay = Math.random() * 3 + "s";
+        heart.style.fontSize = (15 + Math.random() * 25) + "px";
+
+        document.body.appendChild(heart);
+
+        setTimeout(() => heart.remove(), 8500);
+
+    }
+
+}
+
+// BACKGROUND ANIMATION
+
+setInterval(() => {
+
+    const heart = document.createElement("div");
+
+    heart.innerHTML = "✨";
+    heart.className = "floating";
+    heart.style.left = Math.random() * 100 + "vw";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => heart.remove(), 8000);
+
+}, 1300);
+
+</script>
+
+</body>
+</html>
